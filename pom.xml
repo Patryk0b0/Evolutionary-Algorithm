@@ -3,4 +3,19 @@
   <groupId>pl.com</groupId>
   <artifactId>Ewolucja</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+  </dependencies>
 </project>

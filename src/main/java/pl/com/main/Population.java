@@ -2,6 +2,7 @@ package pl.com.main;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.concurrent.CountDownLatch;
 
 import pl.com.thread.FillWithRandom;
 import pl.com.thread.GeneCrossingThread;
@@ -43,11 +44,20 @@ public class Population extends ArrayList<Person> implements Runnable {
 	public static Population create(int amount) {
 		Population population = new Population();
 		
+		CountDownLatch latch = new CountDownLatch(amount);
+		
 		for(int i = 0; i < amount; i++) {
 			population.add(new Person());
 
-			new Thread(new FillWithRandom(population.get(i))).start();
+			new Thread(new FillWithRandom(population.get(i), latch)).start();
 		}
+		
+		try {
+			latch.await();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
 		return population;
 	}
 	
