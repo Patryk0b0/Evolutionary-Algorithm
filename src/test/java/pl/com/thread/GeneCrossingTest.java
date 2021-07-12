@@ -24,13 +24,13 @@ public class GeneCrossingTest {
     	GeneCrossing geneCrossing = new GeneCrossing(persons, person0, 0, person1, 1);
     	geneCrossing.run();
     	
-    	assertTrue(persons[0].rating <= Main.HETMANS);
-    	assertTrue(persons[1].rating <= Main.HETMANS);
+    	assertTrue(persons[0].rating <= Main.HETMANS, "Shouldn't be more than " + Main.HETMANS);
+    	assertTrue(persons[1].rating <= Main.HETMANS, "Shouldn't be more than " + Main.HETMANS);
     	
-    	assertTrue(persons[0].rating > 0);
-    	assertTrue(persons[1].rating > 0);   	
-    	
-    	assertTrue(persons[0].chromosome.length == Main.SIZE);
-    	assertTrue(persons[1].chromosome.length == Main.SIZE);
+    	assertTrue(persons[0].rating > 0, "Should be more than 0");
+    	assertTrue(persons[1].rating > 0, "Should be more than 0");   	
+
+    	assertTrue(persons[0].chromosome.length == Main.SIZE, "Should be equal " + Main.SIZE);
+    	assertTrue(persons[1].chromosome.length == Main.SIZE, "Should be equal " + Main.SIZE);
     }
 }

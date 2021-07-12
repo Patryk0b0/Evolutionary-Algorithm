@@ -18,12 +18,12 @@ public class GeneCrossingThreadTest {
 		GeneCrossingThread geneCrossingThread = new GeneCrossingThread(population);
 		geneCrossingThread.run();
 		
-		assertEquals(10, population.size());
+		assertEquals(10, population.size(), "Should be equal 10");
 		
 		for(Person person : population) {
-			assertTrue(person.rating <= Main.HETMANS);
-			assertTrue(person.rating > 0);
-			assertTrue(person.chromosome.length == Main.SIZE);
+			assertTrue(person.rating <= Main.HETMANS, "Shouldn't be more than " + Main.HETMANS);
+			assertTrue(person.rating > 0, "Should be more than 0");
+			assertTrue(person.chromosome.length == Main.SIZE, "Should be equal " + Main.SIZE);
 		}
 	}
 }
